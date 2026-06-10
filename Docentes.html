@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="https://i.imgur.com/TV6C58U.png" />
+<link rel="stylesheet" type="text/css" href="Dis.css">
+<title>Docentes 2025 — Colegio Integral Cristiano</title>
+</head>
+<body>
+
+<header class="page-header">
+  <h1>Colegio Integral Cristiano</h1>
+  <p>Haz clic en <strong>Ingresar</strong> para acceder a la sala del docente según tu horario de clases.</p>
+</header>
+
+<main class="container">
+  <h2 class="sr-only">Directorio de docentes 2025</h2>
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="filter('all', this)">Todos</button>
+    <button class="filter-btn" onclick="filter('prepa', this)">Preprimaria</button>
+    <button class="filter-btn" onclick="filter('primaria', this)">Primaria</button>
+    <button class="filter-btn" onclick="filter('basicos', this)">Básicos / Diversificado</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</main>
+<script src="Act.js"></script>
+</body>
+</html>
