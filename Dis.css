@@ -1,0 +1,184 @@
+@charset "utf-8";
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0d1b2a;
+    background-image: url(https://i.imgur.com/F5YEICx.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 2rem 1rem 3rem;
+    color: #1a1a2e;
+  }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  .page-header {
+    max-width: 860px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    padding: 2rem 1.5rem 1.5rem;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+  }
+
+  .page-header h1 {
+    font-size: clamp(22px, 5vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #fcdf8a, #f38381);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    animation: gradient-cycle 8s linear infinite alternate;
+  }
+
+  @keyframes gradient-cycle {
+    0%   { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(300deg); }
+  }
+
+  .page-header p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 1.75rem;
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+
+  .filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-btn {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 18px;
+    border-radius: 99px;
+    border: 1.5px solid #d0d5dd;
+    background: #fff;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .filter-btn:hover { border-color: #002F43; color: #002F43; }
+  .filter-btn.active { background: #002F43; color: #fff; border-color: #002F43; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid #e8edf2;
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.10); transform: translateY(-2px); }
+
+  .card-top { display: flex; align-items: center; gap: 10px; }
+
+  .avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 600;
+    flex-shrink: 0;
+  }
+  .av-prepa    { background: #EEEDFE; color: #3C3489; }
+  .av-primaria { background: #E6F1FB; color: #0C447C; }
+  .av-basicos  { background: #E1F5EE; color: #085041; }
+
+  .card-name {
+    font-size: 14px; font-weight: 600;
+    color: #1a1a2e; line-height: 1.3;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 11px; font-weight: 500;
+    padding: 2px 9px;
+    border-radius: 99px;
+    margin-top: 3px;
+  }
+  .badge-prepa    { background: #EEEDFE; color: #3C3489; }
+  .badge-primaria { background: #E6F1FB; color: #0C447C; }
+  .badge-basicos  { background: #E1F5EE; color: #085041; }
+
+  .card-subject {
+    font-size: 12.5px;
+    color: #666;
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .card-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 9px;
+    border: 1.5px solid #d0d5dd;
+    background: #fff;
+    color: #444;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+    margin-top: auto;
+  }
+  .card-btn:hover { background: #002F43; color: #fff; border-color: #002F43; }
+
+  .card-btn svg {
+    width: 15px; height: 15px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  .empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2.5rem;
+    color: #999;
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    .container { padding: 1.25rem; }
+    .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  }
+  @media (max-width: 360px) {
+    .grid { grid-template-columns: 1fr; }
+  }
